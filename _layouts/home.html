@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<script src="https://cdn.jsdelivr.net/npm/github-repo-cards@2.1.0/app.js" defer></script>
+
+{{ content }}
+
+<div class="about">
+    <div class="photo"><img src="{{'/assets/img/self.jpeg'  | prepend: site.baseurl }}"></div>
+    <div class="text">I'm Jesper Bergeskans, a data architect and engineer with a passion for distributed systems.<br>
+        <br>
+        This page is meant to act both as a CV but also as a personal blog about technology I like.
+    </div>
+</div>
+
+{% if site.posts.size > 0 %}
+<h2>Posts</h2>
+<ul>
+    {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>  
+    {% endfor %}
+</ul>
+{% endif %}
